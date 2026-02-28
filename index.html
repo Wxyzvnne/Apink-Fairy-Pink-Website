@@ -3,280 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apink Fairy Pink Universe</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<title>Apink Fairy Universe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ffd6ec,#ffeaf6,#fff);
-    color:#333;
+    background: radial-gradient(circle at top, #3b0a5a, #14001f);
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* NAVBAR */
-nav{
+/* MOBILE APP CONTAINER */
+.app-shell{
+    max-width:420px;
+    margin:auto;
+    background:transparent;
+}
+
+/* floating sparkles */
+.sparkle{
     position:fixed;
-    top:0;
-    width:100%;
-    padding:18px 40px;
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(12px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
+    width:6px;height:6px;
+    background:#ffc8ff;
+    border-radius:50%;
+    opacity:.7;
+    animation:float 8s linear infinite;
+}
+@keyframes float{
+    0%{transform:translateY(100vh) scale(0)}
+    50%{opacity:1}
+    100%{transform:translateY(-10vh) scale(1)}
 }
 
-.logo{
-    font-family:'Playfair Display',serif;
-    font-size:26px;
-    font-weight:700;
-    color:#ff4fa3;
+/* glowing cursor */
+.cursor-glow{
+    position:fixed;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    pointer-events:none;
+    background:radial-gradient(circle,#ff9de2,transparent 70%);
+    mix-blend-mode:screen;
+    z-index:9999;
+    transform:translate(-50%,-50%);
 }
 
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-nav a{
-    text-decoration:none;
-    color:#ff4fa3;
-    font-weight:600;
-}
-
-/* HERO */
-.hero{
-    height:100vh;
+header{
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    position:relative;
+    padding:40px 20px;
+    background:linear-gradient(rgba(20,0,31,.6),rgba(20,0,31,.9)),
+               url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1974&auto=format&fit=crop') center/cover;
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1920') center/cover;
-    opacity:0.25;
+.hero-box{
+    backdrop-filter: blur(12px);
+    background:rgba(255,255,255,.08);
+    padding:40px 25px;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(186,85,211,.4);
+    width:100%;
 }
 
-.hero-content{
-    position:relative;
-    max-width:900px;
-    padding:40px;
-}
-
-.hero h1{
+h1{
     font-family:'Playfair Display',serif;
-    font-size:64px;
-    color:#ff2f92;
+    font-size:clamp(2rem,6vw,3.2rem);
+    color:#f3c6ff;
+    margin-bottom:10px;
 }
 
-.hero p{
-    margin-top:15px;
-    font-size:18px;
+.subtitle{
+    font-size:1rem;
+    opacity:.9;
 }
 
 .btn{
-    margin-top:30px;
-    padding:14px 34px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(45deg,#ff6ec7,#ff9de2);
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 26px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff8bd6,#c77dff);
     color:white;
+    text-decoration:none;
     font-weight:600;
-    cursor:pointer;
-    box-shadow:0 10px 25px rgba(255,105,180,0.4);
+    transition:.3s;
 }
+.btn:hover{transform:scale(1.08)}
 
-/* SECTION */
 section{
-    padding:90px 10%;
+    padding:70px 20px;
+    text-align:center;
 }
 
 .section-title{
-    text-align:center;
-    font-size:36px;
     font-family:'Playfair Display',serif;
-    color:#ff2f92;
-    margin-bottom:50px;
+    font-size:2rem;
+    color:#e0aaff;
+    margin-bottom:35px;
+}
+
+.card{
+    max-width:900px;
+    margin:auto;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(157,78,221,.25);
+}
+
+.details-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.detail-box{
+    background:rgba(0,0,0,.25);
+    padding:16px;
+    border-radius:16px;
+    font-size:.9rem;
 }
 
 /* MEMBERS */
 .members{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:18px;
 }
-
-.card{
-    background:white;
-    border-radius:24px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(255,105,180,0.15);
-    transition:.3s;
+.member-card{
+    background:rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:15px;
+    backdrop-filter:blur(8px);
 }
-
-.card:hover{
-    transform:translateY(-8px) scale(1.02);
-}
-
-.card img{
-    width:120px;
-    height:120px;
+.member-card img{
+    width:100%;
+    height:160px;
     object-fit:cover;
-    border-radius:50%;
-    margin-bottom:15px;
+    border-radius:14px;
+}
+.member-card h4{
+    margin-top:8px;
+    color:#ffc8ff;
+    font-size:.95rem;
 }
 
-.card h3{
-    color:#ff2f92;
-}
-
-/* INFO GRID */
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-}
-
-.info-box{
-    background:linear-gradient(135deg,#fff,#ffe6f4);
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* FOOTER */
 footer{
-    background:#ff4fa3;
-    color:white;
     text-align:center;
-    padding:30px;
+    padding:30px 20px;
+    background:#0d0015;
+    opacity:.85;
 }
 
-/* ENCHANTED SNOW */
-.snowflake{
+/* MUSIC PLAYER */
+.music-player{
     position:fixed;
-    bottom:-10px;
-    width:6px;
-    height:6px;
-    background:white;
-    border-radius:50%;
-    opacity:0.8;
-    pointer-events:none;
-    animation:floatUp linear infinite;
-    box-shadow:0 0 8px rgba(255,255,255,0.9);
-}
-
-@keyframes floatUp{
-    from{
-        transform:translateY(0) translateX(0);
-        opacity:0.9;
-    }
-    to{
-        transform:translateY(-110vh) translateX(40px);
-        opacity:0;
-    }
+    bottom:15px;
+    right:15px;
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:.8rem;
 }
 </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">Apink Fairy</div>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#members">Members</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-</nav>
+<div class="cursor-glow" id="cursor"></div>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Apink Fairy Pink Universe</h1>
-        <p>A dreamy fan website dedicated to the iconic K-Pop girl group known for their sweet vocals and timeless charm.</p>
-        <button class="btn">Join Pink Panda</button>
-    </div>
-</section>
+<div class="app-shell">
+
+<!-- sparkles -->
+<script>
+for(let i=0;i<25;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDelay=Math.random()*8+'s';
+  document.body.appendChild(s);
+}
+</script>
+
+<header>
+  <div class="hero-box">
+    <h1>💗 Apink Fairy Universe 💗</h1>
+    <p class="subtitle">Celebrating the timeless charm of Apink and Pink Panda love</p>
+    <a href="#members" class="btn">Meet Apink</a>
+  </div>
+</header>
 
 <section id="members">
-    <h2 class="section-title">Members</h2>
-    <div class="members">
-        <div class="card">
-            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Chorong">
-            <h3>Chorong</h3>
-            <p>Leader • Vocalist • Born 1991</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Bomi">
-            <h3>Bomi</h3>
-            <p>Main Dancer • Vocalist • Born 1993</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Eunji">
-            <h3>Eunji</h3>
-            <p>Main Vocalist • Actress • Born 1993</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Namjoo">
-            <h3>Namjoo</h3>
-            <p>Lead Vocalist • Born 1995</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Hayoung">
-            <h3>Hayoung</h3>
-            <p>Maknae • Vocalist • Born 1996</p>
-        </div>
+  <h2 class="section-title">Apink Members</h2>
+  <div class="members">
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Park_Cho-rong_2022.jpg">
+      <h4>Chorong</h4>
     </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Yoon_Bomi_2022.jpg">
+      <h4>Bomi</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jung_Eun-ji_2022.jpg">
+      <h4>Eunji</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Kim_Nam-joo_2022.jpg">
+      <h4>Namjoo</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Oh_Ha-young_2022.jpg">
+      <h4>Hayoung</h4>
+    </div>
+  </div>
 </section>
 
-<section id="about">
-    <h2 class="section-title">Group Information</h2>
-    <div class="info-grid">
-        <div class="info-box">
-            <h3>Debut</h3>
-            <p>Apink debuted on April 19, 2011 with the mini album "Seven Springs of Apink."</p>
-        </div>
-        <div class="info-box">
-            <h3>Fandom</h3>
-            <p>The official fandom name is Pink Panda, representing the cute and loyal fanbase.</p>
-        </div>
-        <div class="info-box">
-            <h3>Concept</h3>
-            <p>Known for their innocent, fairy-like image that later evolved into elegant and mature styles.</p>
-        </div>
-        <div class="info-box">
-            <h3>Popular Songs</h3>
-            <p>Mr. Chu • NoNoNo • I'm So Sick • Dumhdurum • LUV</p>
-        </div>
+<section id="details">
+  <h2 class="section-title">About Apink</h2>
+  <div class="card">
+    <p>Apink debuted on April 19, 2011. Known for their innocent fairy concept and strong vocals, they remain one of K-pop's most respected girl groups.</p>
+
+    <div class="details-grid">
+      <div class="detail-box"><strong>🎤 Debut</strong><br>2011</div>
+      <div class="detail-box"><strong>🏢 Agency</strong><br>IST Ent.</div>
+      <div class="detail-box"><strong>🐼 Fandom</strong><br>Pink Panda</div>
+      <div class="detail-box"><strong>🌸 Style</strong><br>Innocent → Elegant</div>
     </div>
+  </div>
 </section>
 
 <footer>
-    <p>© 2026 Apink Fairy Fan Site • Made with love 💗</p>
+  Made with 💗 for Pink Panda
 </footer>
 
-<script>
-// enchanted upward snow effect
-function createSnow(){
-    const s=document.createElement('div');
-    s.className='snowflake';
-    s.style.left=Math.random()*100+'vw';
-    s.style.width=s.style.height=(4+Math.random()*6)+'px';
-    s.style.animationDuration=(6+Math.random()*8)+'s';
-    document.body.appendChild(s);
-    setTimeout(()=>s.remove(),14000);
-}
+</div>
 
-setInterval(createSnow,200);
+<!-- music player -->
+<div class="music-player">
+  🎵 Now Playing: Mr. Chu
+  <audio autoplay loop controls style="width:200px;display:block;margin-top:5px">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+// glowing cursor trail
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';
+  cursor.style.top=e.clientY+'px';
+});
 </script>
 
 </body>
