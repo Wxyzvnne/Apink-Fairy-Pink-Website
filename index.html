@@ -15,6 +15,17 @@ body{
     overflow-x:hidden;
 }
 
+<!-- sparkles -->
+<script>
+for(let i=0;i<25;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDelay=Math.random()*8+'s';
+  document.body.appendChild(s);
+}
+</script>
+    
 /* NAVBAR */
 nav{
     position:fixed;
