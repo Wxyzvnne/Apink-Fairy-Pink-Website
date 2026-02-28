@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apink Fairy Pink Universe</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffd6ec,#ffeaf6,#fff);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 40px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    font-weight:700;
+    color:#ff4fa3;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#ff4fa3;
+    font-weight:600;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1920') center/cover;
+    opacity:0.25;
+}
+
+.hero-content{
+    position:relative;
+    max-width:900px;
+    padding:40px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:64px;
+    color:#ff2f92;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 34px;
+    border:none;
+    border-radius:999px;
+    background:linear-gradient(45deg,#ff6ec7,#ff9de2);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255,105,180,0.4);
+}
+
+/* SECTION */
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    font-family:'Playfair Display',serif;
+    color:#ff2f92;
+    margin-bottom:50px;
+}
+
+/* MEMBERS */
+.members{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:24px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(255,105,180,0.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+}
+
+.card img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#ff2f92;
+}
+
+/* INFO GRID */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.info-box{
+    background:linear-gradient(135deg,#fff,#ffe6f4);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+footer{
+    background:#ff4fa3;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* FLOATING SPARKLES */
+.sparkle{
+    position:fixed;
+    width:8px;
+    height:8px;
+    background:#ff9de2;
+    border-radius:50%;
+    animation:float 8s linear infinite;
+    opacity:.6;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh)}
+    to{transform:translateY(-10vh)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Apink Fairy</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Apink Fairy Pink Universe</h1>
+        <p>A dreamy fan website dedicated to the iconic K‑Pop girl group known for their sweet vocals and timeless charm.</p>
+        <button class="btn">Join Pink Panda</button>
+    </div>
+</section>
+
+<section id="members">
+    <h2 class="section-title">Members</h2>
+    <div class="members">
+        <div class="card">
+            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Chorong">
+            <h3>Chorong</h3>
+            <p>Leader • Vocalist • Born 1991</p>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Bomi">
+            <h3>Bomi</h3>
+            <p>Main Dancer • Vocalist • Born 1993</p>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Eunji">
+            <h3>Eunji</h3>
+            <p>Main Vocalist • Actress • Born 1993</p>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Namjoo">
+            <h3>Namjoo</h3>
+            <p>Lead Vocalist • Born 1995</p>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/2DhmtJ4.png" alt="Hayoung">
+            <h3>Hayoung</h3>
+            <p>Maknae • Vocalist • Born 1996</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">Group Information</h2>
+    <div class="info-grid">
+        <div class="info-box">
+            <h3>Debut</h3>
+            <p>Apink debuted on April 19, 2011 with the mini album "Seven Springs of Apink."</p>
+        </div>
+        <div class="info-box">
+            <h3>Fandom</h3>
+            <p>The official fandom name is Pink Panda, representing the cute and loyal fanbase.</p>
+        </div>
+        <div class="info-box">
+            <h3>Concept</h3>
+            <p>Known for their innocent, fairy-like image that later evolved into elegant and mature styles.</p>
+        </div>
+        <div class="info-box">
+            <h3>Popular Songs</h3>
+            <p>Mr. Chu • NoNoNo • I'm So Sick • Dumhdurum • LUV</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Apink Fairy Fan Site • Made with love 💗</p>
+</footer>
+
+<script>
+// create floating sparkles
+for(let i=0;i<20;i++){
+    const s=document.createElement('div');
+    s.className='sparkle';
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDuration=(5+Math.random()*10)+'s';
+    document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
