@@ -15,17 +15,6 @@ body{
     overflow-x:hidden;
 }
 
-<!-- sparkles -->
-<script>
-for(let i=0;i<25;i++){
-  const s=document.createElement('div');
-  s.className='sparkle';
-  s.style.left=Math.random()*100+'vw';
-  s.style.animationDelay=Math.random()*8+'s';
-  document.body.appendChild(s);
-}
-</script>
-    
 /* NAVBAR */
 nav{
     position:fixed;
@@ -173,20 +162,29 @@ footer{
     padding:30px;
 }
 
-/* FLOATING SPARKLES */
-.sparkle{
+/* ENCHANTED SNOW */
+.snowflake{
     position:fixed;
-    width:8px;
-    height:8px;
-    background:#ff9de2;
+    bottom:-10px;
+    width:6px;
+    height:6px;
+    background:white;
     border-radius:50%;
-    animation:float 8s linear infinite;
-    opacity:.6;
+    opacity:0.8;
+    pointer-events:none;
+    animation:floatUp linear infinite;
+    box-shadow:0 0 8px rgba(255,255,255,0.9);
 }
 
-@keyframes float{
-    from{transform:translateY(100vh)}
-    to{transform:translateY(-10vh)}
+@keyframes floatUp{
+    from{
+        transform:translateY(0) translateX(0);
+        opacity:0.9;
+    }
+    to{
+        transform:translateY(-110vh) translateX(40px);
+        opacity:0;
+    }
 }
 </style>
 </head>
@@ -204,7 +202,7 @@ footer{
 <section class="hero" id="home">
     <div class="hero-content">
         <h1>Apink Fairy Pink Universe</h1>
-        <p>A dreamy fan website dedicated to the iconic K‑Pop girl group known for their sweet vocals and timeless charm.</p>
+        <p>A dreamy fan website dedicated to the iconic K-Pop girl group known for their sweet vocals and timeless charm.</p>
         <button class="btn">Join Pink Panda</button>
     </div>
 </section>
@@ -267,14 +265,18 @@ footer{
 </footer>
 
 <script>
-// create floating sparkles
-for(let i=0;i<20;i++){
+// enchanted upward snow effect
+function createSnow(){
     const s=document.createElement('div');
-    s.className='sparkle';
+    s.className='snowflake';
     s.style.left=Math.random()*100+'vw';
-    s.style.animationDuration=(5+Math.random()*10)+'s';
+    s.style.width=s.style.height=(4+Math.random()*6)+'px';
+    s.style.animationDuration=(6+Math.random()*8)+'s';
     document.body.appendChild(s);
+    setTimeout(()=>s.remove(),14000);
 }
+
+setInterval(createSnow,200);
 </script>
 
 </body>
